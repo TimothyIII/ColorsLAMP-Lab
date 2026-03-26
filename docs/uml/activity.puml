@@ -1,0 +1,43 @@
+@startuml
+(Start) as "Starter"
+(userLogIn) as "Log In"
+(indexHTML) as "Sends user to index.html"
+(invalid) as "Incorrect User/Pass"
+(valid) as "Correct User/Pass"
+(chooseAction) as "Choose an Action"
+
+(addColor) as "Add Color"
+(apiAdd) as "Sends an API request to mySQL"
+(dbInsert) as "MySQL adds Color to DB"
+
+(searchColor) as "Search for Color"
+(apiSearch) as "Sends an API request to mySQL"
+(dbSearch) as "MySQL returns a matching ID"
+(showSearchResult) as "Displays Search Result"
+
+(logOut) as "Log Out"
+
+(Start) ---> (userLogIn): "User Inputs User/Pass"
+
+(userLogIn) --> (indexHTML): "Server checks to see if User/Pass is valid"
+(indexHTML) --> (valid)
+(indexHTML) --> (invalid): "Error: Wrong User/Pass"
+(invalid) --> (indexHTML)
+(valid) --> (chooseAction)
+
+(chooseAction) --> (addColor): "Action: Add Color"
+(addColor) --> (apiAdd)
+(apiAdd) --> (dbInsert)
+(dbInsert) --> (chooseAction)
+
+(chooseAction) --> (searchColor): "Action: Search Color"
+(searchColor) --> (apiSearch)
+(apiSearch) --> (dbSearch)
+(dbSearch) --> (showSearchResult): "Action: Return Search if valid"
+(dbSearch) --> (chooseAction): "Action: If Search is not valid"
+(showSearchResult) --> (chooseAction)
+
+(chooseAction) --> (logOut): "Action: Log Out"
+(logOut) --> (userLogIn)
+
+@enduml
