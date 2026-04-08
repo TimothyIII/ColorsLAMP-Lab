@@ -17,4 +17,4 @@ jobs:
         run: npm install
 
       - name: Run Linters
-        run: npm run lint-all
+        run: npm run lint
