@@ -14,7 +14,6 @@ jobs:
           php-version: '8.2'
 
       - name: Start PHP Local Server
-        # This runs your PHP app in the background so Jest can hit it
         run: php -S localhost:8000 & 
 
       - name: Install Node and Jest
