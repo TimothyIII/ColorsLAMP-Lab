@@ -1,13 +1,37 @@
 {
   "scripts": {
-    "lint": "htmlhint **/*.html && stylelint **/*.css && eslint ."
+    "lint": "htmlhint **/*.html && stylelint **/*.css && eslint .",
+    "test": "jest"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "eslint": "^10.2.0",
     "globals": "^17.4.0",
     "htmlhint": "^1.9.2",
+    "jest": "^30.3.0",
     "stylelint": "^17.6.0",
     "stylelint-config-standard": "^40.0.0"
+  },
+  "name": "colorslamp-lab",
+  "version": "1.0.0",
+  "description": "COLORS is a simple full-stack web application that allows authenticated users to store and search for color names associated with their account. The project demonstrates a basic client–server architecture using a REST-style API, a relational database, and a browser-based frontend.  \r The application was built to illustrate core web development concepts, including API design, database integration, authentication, and separation of frontend and backend concerns.\r ## Technologies Used\r ### Backend\r - Linux (Ubuntu)\r - Apache (Web server)\r - MySQL (Relational database)\r - PHP (REST API endpoints)\r ### Frontend\r - HTML\r - CSS\r - JavaScript\r - AJAX / Fetch API\r ### Infrastructure\r - LAMP Stack\r - Hosted on a cloud VPS (e.g., DigitalOcean)\r ## Repository Structure\r ```\r /\r ├── LICENSE\r ├── index.html\r ├── color.html\r ├── css/\r ├── js/\r ├── images/\r ├── API/\r │   ├── Login.php\r │   ├── AddColor.php\r │   └── SearchColors.php\r └── README.md\r ```\r ## High-Level Setup Instructions\r A Linux server with root or sudo access is assumed.\r 1. Provision a LAMP server.\r    - Ubuntu-based system\r    - Apache, MySQL, and PHP installed and running\r 2. Clone the repository.\r 3. Deploy files.\r    - Copy frontent files to ```/var/www/html```\r    - Copy API files to ```/var/www/html/LAMPAPI```\r 4. Configure the database.\r    - Create a MySQL database\r    - Create required tables (Users, Colors)\r    - Insert initial test data (optional)\r 5. Update API credentials.\r    - In each PHP API file, configure:\r    ```\r    $conn = new mysqli(\"localhost\", \"database_username\", \"database_password\", \"database_name\");\r    ```\r ## How to Run and Access the App\r 1. Ensure Apache and MySQL are running.\r 2. Open a browser and navigate to your dedicated domain or ip.\r 3. Log in using an existing test user or create a one directly in the database.\r 4. Try to add new colors and search for colors associatd with your user account.\r ## API Endpoints\r All endpoints use ```POST``` and ```application/json```.\r - /API/Login.php\r   - Authenticates a user\r - /API/AddColor.php\r   - Adds a color for a user\r - /API/SearchColors.php\r   - Searches colors for a user\r ## Assumptions, Limitations, and AI Usage\r ### Assumptions\r The application is deployed on a trusted server environment.  \r Users are pre-created in the database or inserted manually.  \r The project is intended for instructional/demo purposes.  \r ### Limitations\r No HTTPS configuration included by default.  \r Password hashing uses a basic hashing approach (not production-grade).  \r No role-based access control.  \r Minimal input sanitization beyond core validation.  \r ### AI Usage Disclosure\r This project was developed with assistance from generative AI tools:\r - **Tool**: ChatGPT (GPT-5.2, accessed via chatgpt.com)\r - **Dates**: February 14-15, 2026\r - **Scope**: README file generation.\r - **Use**: Generated initial README (slightly modified), provided\r explanations that furthered my understanding of proper Git etiquette.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TimothyIII/ColorsLAMP-Lab.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/TimothyIII/ColorsLAMP-Lab/issues"
+  },
+  "homepage": "https://github.com/TimothyIII/ColorsLAMP-Lab#readme",
+  "dependencies": {
+    "axios": "^1.15.2"
   }
 }
